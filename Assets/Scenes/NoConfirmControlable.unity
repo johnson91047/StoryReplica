@@ -163,6 +163,7 @@ MonoBehaviour:
   CameraInitialZValue: -10
   SpeedMultiplier: 3
   CameraMovementDeadZone: 0.05
+  ChangeStoryDeadZone: 100
   LerpEaseAmount: 15
   TargetPosition: {x: 0, y: 0, z: 0}
   AspectRatio: {x: 9, y: 16}
@@ -445,6 +446,7 @@ MonoBehaviour:
     type: 3}
   CurrentStoryIndex: 0
   Stories:
-  - {fileID: 11400000, guid: 2a4b81e9c76075047a946909b0d93e68, type: 2}
-  - {fileID: 11400000, guid: 040a927269f62dc45841204037333f1b, type: 2}
+  - {fileID: 11400000, guid: f1e15dea51da62543b6157f04167e39e, type: 2}
+  - {fileID: 11400000, guid: 46ebceb3b51554d42bf950e044422110, type: 2}
+  - {fileID: 11400000, guid: 0810daf38b22b8b4ca24e6df23a87fa7, type: 2}
   - {fileID: 11400000, guid: b6d9c38c3f7ccd24dbe253ea17e86268, type: 2}

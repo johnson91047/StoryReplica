@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
   m_Name: MilkShopNoConfirm
   m_EditorClassIdentifier: 
+  Controlable: 0
+  Persistent: 0
   Stories:
   - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: d55564a37541ed2469452eb888fc9c9e, type: 3}

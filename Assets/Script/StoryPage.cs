@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +11,10 @@ public class StoryPage : MonoBehaviour
     public Transform TimeBarParent;
     public Image StoryContent;
     public int CurrentPageIndex;
+    public int UnControlableImageIndex;
     public Action OnChangeToNextStory;
     public Action OnChangeToPreviousStory;
-    public Action<bool> OnChangeToFirstStory;
+    public Action OnPersistentNext;
 
     [HideInInspector]
     public StoryObject StoryObject;
@@ -21,6 +23,7 @@ public class StoryPage : MonoBehaviour
     private bool _pause;
     private Slider _currentTimeBar;
     private float _currentPageTimeCount;
+    private float _uncontrolableTimeCount;
     private int _totalPageIndex;
     private List<Slider> _timeBars;
 
@@ -29,9 +32,11 @@ public class StoryPage : MonoBehaviour
     {
         _timeBars = new List<Slider>();
         _currentPageTimeCount = 0;
+        _uncontrolableTimeCount = 0;
+        UnControlableImageIndex = 0;
         _pause = true;
         _isPersistent = false;
-        _totalPageIndex = StoryObject.Stories.Count;
+        _totalPageIndex = StoryObject.Controlable ? StoryObject.Stories.Count : 1;
         InitTimeBar();
         InitContent();
     }
@@ -47,11 +52,24 @@ public class StoryPage : MonoBehaviour
         if (_currentPageTimeCount >= _currentTimeBar.maxValue)
         {
             NextPage();
+            Debug.Log("Next page");
             return;
         }
-        else if (_currentPageTimeCount < _currentTimeBar.maxValue)
+
+        if (_currentPageTimeCount < _currentTimeBar.maxValue)
         {
+            _uncontrolableTimeCount += Time.deltaTime;
             _currentPageTimeCount += Time.deltaTime;
+
+            if (!StoryObject.Controlable)
+            {
+                if (_uncontrolableTimeCount >= StoryObject.TotalLength / StoryObject.Stories.Count)
+                {
+                    NextImage();
+                    Debug.Log("Next Image");
+                    _uncontrolableTimeCount = 0;
+                }
+            }
         }
 
         _currentTimeBar.value = _currentPageTimeCount;
@@ -66,6 +84,9 @@ public class StoryPage : MonoBehaviour
     {
         _timeBars[CurrentPageIndex].value = 0;
         _currentPageTimeCount = 0;
+        UnControlableImageIndex = 0;
+        _uncontrolableTimeCount = 0;
+        SetCurrentContent();
         SetPause(true);
     }
 
@@ -73,17 +94,19 @@ public class StoryPage : MonoBehaviour
     {
         if (_isPersistent)
         {
-            OnChangeToFirstStory?.Invoke(true);
+            OnPersistentNext?.Invoke();
             return;
         }
 
         CurrentPageIndex++;
 
-        if (CurrentPageIndex == _totalPageIndex)
+        if (CurrentPageIndex >= _totalPageIndex)
         {
             CurrentPageIndex = _totalPageIndex - 1;
             _timeBars[CurrentPageIndex].value = 0;
             _currentPageTimeCount = 0;
+            _uncontrolableTimeCount = 0;
+            UnControlableImageIndex = 0;
             SetPause(true);
 
             OnChangeToNextStory?.Invoke();
@@ -95,6 +118,18 @@ public class StoryPage : MonoBehaviour
 
         SetCurrentContent();
         SetCurrentTimeBar();
+    }
+
+    public void NextImage()
+    {
+        UnControlableImageIndex++;
+
+        if (UnControlableImageIndex >= StoryObject.Stories.Count)
+        {
+            return;
+        }
+
+        StoryContent.sprite = StoryObject.Stories[UnControlableImageIndex].StoryContent;
     }
 
     public void PreviousPage()
@@ -112,6 +147,8 @@ public class StoryPage : MonoBehaviour
             CurrentPageIndex = 0;
             _timeBars[CurrentPageIndex].value = 0;
             _currentPageTimeCount = 0;
+            _uncontrolableTimeCount = 0;
+            UnControlableImageIndex = 0;
             SetPause(true);
 
             OnChangeToPreviousStory?.Invoke();
@@ -142,6 +179,7 @@ public class StoryPage : MonoBehaviour
         }
 
         CurrentPageIndex = 0;
+        UnControlableImageIndex = 0;
         SetCurrentContent();
         SetCurrentTimeBar();
 
@@ -158,6 +196,7 @@ public class StoryPage : MonoBehaviour
         _currentPageTimeCount = 0;
         _currentTimeBar = _timeBars[CurrentPageIndex];
         _currentTimeBar.value = 0;
+        _uncontrolableTimeCount = 0;
     }
 
     private void InitContent()
@@ -167,20 +206,33 @@ public class StoryPage : MonoBehaviour
 
     private void InitTimeBar()
     {
-        if (Math.Abs(StoryObject.Stories[0].StoryLength - (-1)) < float.Epsilon)
+        if (StoryObject.Persistent)
         {
             _isPersistent = true;
         }
 
-        foreach (StoryData story in StoryObject.Stories)
+        if (StoryObject.Controlable)
+        {
+            foreach (StoryData story in StoryObject.Stories)
+            {
+                GameObject timeBarGameObject = Instantiate(TimeBarPrefab, TimeBarParent);
+                Slider timeBar = timeBarGameObject.GetComponent<Slider>();
+                timeBar.minValue = 0;
+                timeBar.maxValue = story.StoryLength;
+                timeBar.value = 0;
+                _timeBars.Add(timeBar);
+            }
+        }
+        else
         {
             GameObject timeBarGameObject = Instantiate(TimeBarPrefab, TimeBarParent);
             Slider timeBar = timeBarGameObject.GetComponent<Slider>();
             timeBar.minValue = 0;
-            timeBar.maxValue = story.StoryLength;
+            timeBar.maxValue = StoryObject.TotalLength;
             timeBar.value = 0;
             _timeBars.Add(timeBar);
         }
+
 
         _currentTimeBar = _timeBars[0];
     }

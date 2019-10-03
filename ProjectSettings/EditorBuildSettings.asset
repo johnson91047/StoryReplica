@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 52fe71a579c012e4e85101533e1a5278
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/ConfirmControlable.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Confirm.unity
+    guid: 68a6b95582b0ff041bbe6f3105118715
+  - enabled: 1
+    path: Assets/Scenes/NoConfirmControlable.unity
+    guid: 5e52822393c1ef3429a30bf62ea49263
+  - enabled: 1
+    path: Assets/Scenes/NoConfirm.unity
+    guid: caae0a54858b44f4da65b4f6cf3b86b8
   m_configObjects: {}

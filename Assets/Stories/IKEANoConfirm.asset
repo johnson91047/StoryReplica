@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
-  m_Name: MilkShopConfirm
+  m_Name: IKEANoConfirm
   m_EditorClassIdentifier: 
   Controlable: 0
   Persistent: 0
   Stories:
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: ba74df1d736007a41a36df907a788c30, type: 3}
+    StoryContent: {fileID: 21300000, guid: 300487f1f8f9eae4c884b1505033e7bf, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: b67c5c0fbf819324abf5dd84198ded86, type: 3}
+    StoryContent: {fileID: 21300000, guid: 5b9352578310da043b111642e00e68a2, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 3be705b3ed0280048ac42bde520f5ab8, type: 3}
+    StoryContent: {fileID: 21300000, guid: de51841866bf20c41be3a33e9bae0174, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 3f7f8840512e8bb4aa850dbfe390451a, type: 3}
+    StoryContent: {fileID: 21300000, guid: 331b033a191a4504d91fe625b8d1783f, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 98e21afb165d98b43a66410e6cc46a48, type: 3}
+    StoryContent: {fileID: 21300000, guid: 9a3c1284ef806384c9595d6a5a27cfe9, type: 3}

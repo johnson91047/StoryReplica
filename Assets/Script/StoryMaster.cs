@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryMaster : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class StoryMaster : MonoBehaviour
             page.StoryObject = storyObject;
             page.OnChangeToNextStory += ChangeToNextStory;
             page.OnChangeToPreviousStory += ChangeToPreviousStory;
-            page.OnChangeToFirstStory += ChangeToFirstStory;
+            page.OnPersistentNext += BackToMenu;
             _pages.Add(page);
         }
     }
@@ -102,15 +103,9 @@ public class StoryMaster : MonoBehaviour
         _currentPage.PreviousPage();
     }
 
-    public void ChangeToFirstStory(bool resetAll)
+    public void BackToMenu()
     {
-        if (resetAll)
-        {
-            ResetAllStories();
-        }
-
-        CurrentStoryIndex = 0;
-        StartCoroutine(SetCameraToCurrentPagePos());
+        SceneManager.LoadScene(0);
     }
 
 

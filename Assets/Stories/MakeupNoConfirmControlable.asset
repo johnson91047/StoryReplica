@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
-  m_Name: Last
+  m_Name: MakeupNoConfirmControlable
   m_EditorClassIdentifier: 
   Controlable: 1
-  Persistent: 1
-  AvarageLength: 0
+  Persistent: 0
   Stories:
-  - StoryLength: -1
-    StoryContent: {fileID: 21300000, guid: 02c0349104215c2438ce4a495dcb6e57, type: 3}
+  - StoryLength: 3
+    StoryContent: {fileID: 21300000, guid: d1e009762dd014948bb96e3546f1d83c, type: 3}
+  - StoryLength: 3
+    StoryContent: {fileID: 21300000, guid: a7c4727d5053e7649912b063dbac6392, type: 3}
