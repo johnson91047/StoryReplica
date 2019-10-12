@@ -26,12 +26,20 @@ public class StoryMaster : MonoBehaviour
         InitStories();
         _totalStoriesCount = transform.childCount;
 
-        StartCoroutine(SetCameraToCurrentPagePos());
+        StartCoroutine(SetCameraToCurrentPagePosInit());
     }
 
-    private IEnumerator SetCameraToCurrentPagePos()
+    private IEnumerator SetCameraToCurrentPagePosInit()
     {
         yield return new WaitForEndOfFrame();
+        Vector3 pos = transform.GetChild(CurrentStoryIndex).transform.position;
+        _cameraController.SetDestination(pos);
+        _currentPage = _pages[CurrentStoryIndex];
+        SetCurrentPagePause(false);
+    }
+
+    private void SetCameraToCurrentPagePos()
+    {
         Vector3 pos = transform.GetChild(CurrentStoryIndex).transform.position;
         _cameraController.SetDestination(pos);
         _currentPage = _pages[CurrentStoryIndex];
@@ -64,7 +72,7 @@ public class StoryMaster : MonoBehaviour
         }
 
         _currentPage.StayCurrentState();
-        StartCoroutine(SetCameraToCurrentPagePos());
+        SetCameraToCurrentPagePos();
     }
 
     public void ChangeToPreviousStory()
@@ -80,12 +88,12 @@ public class StoryMaster : MonoBehaviour
 
         _currentPage.StayCurrentState();
 
-        StartCoroutine(SetCameraToCurrentPagePos());
+        SetCameraToCurrentPagePos();
     }
 
     public void StayAtCurrentStory()
     {
-        StartCoroutine(SetCameraToCurrentPagePos());
+        SetCameraToCurrentPagePos();
     }
 
     public void SetCurrentPagePause(bool pause)
