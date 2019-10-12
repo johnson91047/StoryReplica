@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
-  m_Name: MilkShopNoConfirmControlable
+  m_Name: SleepNoConfirmControlable
   m_EditorClassIdentifier: 
   Controlable: 1
-  AvarageLength: 3
+  Persistent: 0
   Stories:
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: d55564a37541ed2469452eb888fc9c9e, type: 3}
+    StoryContent: {fileID: 21300000, guid: fe5a2ce547d08f8419fd19bffde906c1, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: b67c5c0fbf819324abf5dd84198ded86, type: 3}
+    StoryContent: {fileID: 21300000, guid: c346dd443a05758499c0faa9eb8012c0, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 3be705b3ed0280048ac42bde520f5ab8, type: 3}
+    StoryContent: {fileID: 21300000, guid: b1e11b8bf04a9164c8b418ddeaf8d494, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 3f7f8840512e8bb4aa850dbfe390451a, type: 3}
+    StoryContent: {fileID: 21300000, guid: 7a749534efb0f604fb66857bf8839d41, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 98e21afb165d98b43a66410e6cc46a48, type: 3}
+    StoryContent: {fileID: 21300000, guid: fe994ca4ca58d3347b99af7b7ea73a47, type: 3}

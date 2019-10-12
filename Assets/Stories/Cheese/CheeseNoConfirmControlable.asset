@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
+  m_Name: CheeseNoConfirmControlable
+  m_EditorClassIdentifier: 
+  Controlable: 1
+  Persistent: 0
+  Stories:
+  - StoryLength: 3
+    StoryContent: {fileID: 21300000, guid: 07c26a367087a484ea936ba9e0599a1d, type: 3}
+  - StoryLength: 3
+    StoryContent: {fileID: 21300000, guid: faf1210db8f548343b75602b3f9c04ba, type: 3}
+  - StoryLength: 3
+    StoryContent: {fileID: 21300000, guid: faf1210db8f548343b75602b3f9c04ba, type: 3}
+  - StoryLength: 3
+    StoryContent: {fileID: 21300000, guid: 716ef8fc0b4dc9c478a3f0496aea7013, type: 3}
+  - StoryLength: 3
+    StoryContent: {fileID: 21300000, guid: 3ef7ea7bd9303e74ab0a1e0e95f09a16, type: 3}

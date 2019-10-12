@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
-  m_Name: IKEANoConfirmControlable
+  m_Name: SleepConfirmControlable
   m_EditorClassIdentifier: 
   Controlable: 1
-  AvarageLength: 3
+  Persistent: 0
   Stories:
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 300487f1f8f9eae4c884b1505033e7bf, type: 3}
+    StoryContent: {fileID: 21300000, guid: f1305ea91817e324da2ca787c53ff50a, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 5b9352578310da043b111642e00e68a2, type: 3}
+    StoryContent: {fileID: 21300000, guid: c346dd443a05758499c0faa9eb8012c0, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: de51841866bf20c41be3a33e9bae0174, type: 3}
+    StoryContent: {fileID: 21300000, guid: b1e11b8bf04a9164c8b418ddeaf8d494, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 331b033a191a4504d91fe625b8d1783f, type: 3}
+    StoryContent: {fileID: 21300000, guid: 7a749534efb0f604fb66857bf8839d41, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 9a3c1284ef806384c9595d6a5a27cfe9, type: 3}
+    StoryContent: {fileID: 21300000, guid: fe994ca4ca58d3347b99af7b7ea73a47, type: 3}

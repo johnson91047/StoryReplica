@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
-  m_Name: IKEAConfirmControlable
+  m_Name: CheeseConfirmControlable
   m_EditorClassIdentifier: 
   Controlable: 1
-  AvarageLength: 3
+  Persistent: 0
   Stories:
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 4328ad34d8e510d44aa6393a29d48376, type: 3}
+    StoryContent: {fileID: 21300000, guid: 7a86257d0cecee842a74d794802e48eb, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 7bd64b7aed486f449a5c56970c067cca, type: 3}
+    StoryContent: {fileID: 21300000, guid: e075d1d05acd36140a2410df0d3ce40f, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: b982daa6cdff51a47b6ab869905c39ab, type: 3}
+    StoryContent: {fileID: 21300000, guid: faf1210db8f548343b75602b3f9c04ba, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 2c85fe14fbfe28742b6df8df3f66a1d0, type: 3}
+    StoryContent: {fileID: 21300000, guid: 716ef8fc0b4dc9c478a3f0496aea7013, type: 3}
   - StoryLength: 3
-    StoryContent: {fileID: 21300000, guid: 9a3c1284ef806384c9595d6a5a27cfe9, type: 3}
+    StoryContent: {fileID: 21300000, guid: 3ef7ea7bd9303e74ab0a1e0e95f09a16, type: 3}
