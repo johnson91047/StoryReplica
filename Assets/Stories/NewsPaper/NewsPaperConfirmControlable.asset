@@ -15,11 +15,11 @@ MonoBehaviour:
   Controlable: 1
   Persistent: 0
   Stories:
-  - StoryLength: 0
+  - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: f03c4ef2a909a534bb30d7c879830dba, type: 3}
-  - StoryLength: 0
+  - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: 02945b5da85203c49bb6aaf0a8bfec2b, type: 3}
-  - StoryLength: 0
+  - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: 65e95742cb96449419515340ca6db9b8, type: 3}
-  - StoryLength: 0
+  - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: 95f0004cafc618a478539f803ba8ef76, type: 3}
