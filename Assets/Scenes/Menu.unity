@@ -620,8 +620,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u78BA\u5B9A\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e08c588215fae6c46a52f1a9ee950a2b, type: 2}
-  m_sharedMaterial: {fileID: -539134490839416770, guid: e08c588215fae6c46a52f1a9ee950a2b,
+  m_fontAsset: {fileID: 11400000, guid: a95c309be9bcb9e4f8c3aa98527b1159, type: 2}
+  m_sharedMaterial: {fileID: -9009834881816724081, guid: a95c309be9bcb9e4f8c3aa98527b1159,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -913,8 +913,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u4E0D\u78BA\u5B9A\u4E14\u53EF\u63A7\u5236"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e08c588215fae6c46a52f1a9ee950a2b, type: 2}
-  m_sharedMaterial: {fileID: -539134490839416770, guid: e08c588215fae6c46a52f1a9ee950a2b,
+  m_fontAsset: {fileID: 11400000, guid: a95c309be9bcb9e4f8c3aa98527b1159, type: 2}
+  m_sharedMaterial: {fileID: -9009834881816724081, guid: a95c309be9bcb9e4f8c3aa98527b1159,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1154,8 +1154,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u78BA\u5B9A\u4E14\u53EF\u63A7\u5236"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e08c588215fae6c46a52f1a9ee950a2b, type: 2}
-  m_sharedMaterial: {fileID: -539134490839416770, guid: e08c588215fae6c46a52f1a9ee950a2b,
+  m_fontAsset: {fileID: 11400000, guid: a95c309be9bcb9e4f8c3aa98527b1159, type: 2}
+  m_sharedMaterial: {fileID: -9009834881816724081, guid: a95c309be9bcb9e4f8c3aa98527b1159,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1411,8 +1411,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u6309ECS\u56DE\u5230\u4E3B\u756B\u9762"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e08c588215fae6c46a52f1a9ee950a2b, type: 2}
-  m_sharedMaterial: {fileID: -539134490839416770, guid: e08c588215fae6c46a52f1a9ee950a2b,
+  m_fontAsset: {fileID: 11400000, guid: a95c309be9bcb9e4f8c3aa98527b1159, type: 2}
+  m_sharedMaterial: {fileID: -9009834881816724081, guid: a95c309be9bcb9e4f8c3aa98527b1159,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1569,8 +1569,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u4E0D\u78BA\u5B9A"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e08c588215fae6c46a52f1a9ee950a2b, type: 2}
-  m_sharedMaterial: {fileID: -539134490839416770, guid: e08c588215fae6c46a52f1a9ee950a2b,
+  m_fontAsset: {fileID: 11400000, guid: a95c309be9bcb9e4f8c3aa98527b1159, type: 2}
+  m_sharedMaterial: {fileID: -9009834881816724081, guid: a95c309be9bcb9e4f8c3aa98527b1159,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
