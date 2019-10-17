@@ -17,9 +17,21 @@ MonoBehaviour:
   Stories:
   - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: 68dc5ad2ee36b4e438adaa6be8296985, type: 3}
+    IsSurvey: 0
+    SurveyType: 0
   - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: 5711649eb983dc24b8b96b597c61e1db, type: 3}
+    IsSurvey: 0
+    SurveyType: 0
   - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: 5cbec8d59edbe6940ae84316cdb80888, type: 3}
+    IsSurvey: 0
+    SurveyType: 0
+  - StoryLength: 3
+    StoryContent: {fileID: 0}
+    IsSurvey: 1
+    SurveyType: 0
   - StoryLength: 3
     StoryContent: {fileID: 21300000, guid: d89e0ec38892d574485bc0cda76d23ac, type: 3}
+    IsSurvey: 0
+    SurveyType: 0

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
@@ -15,10 +17,12 @@ public class CameraController : MonoBehaviour
     private Vector3 _initMouseWorldPosition;
     private float _initMouseXValue;
     private Camera _camera;
+    private bool _isDisable;
 
     // Start is called before the first frame update
     void Start()
     {
+        _isDisable = false;
         _camera = GetComponent<Camera>();
         SetAspectRatio();
     }
@@ -26,7 +30,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleInput();
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            HandleInput();
+        }
+
         MoveCamera();
     }
 

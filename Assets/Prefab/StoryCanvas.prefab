@@ -191,7 +191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7333855890481698737}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -218,6 +218,7 @@ MonoBehaviour:
   TimeBarParent: {fileID: 7333855888950065204}
   StoryContent: {fileID: 7333855890523266034}
   CurrentPageIndex: 0
+  UnControlableImageIndex: 0
   StoryObject: {fileID: 0}
 --- !u!1 &7333855890523266044
 GameObject:
