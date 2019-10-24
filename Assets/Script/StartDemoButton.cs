@@ -19,6 +19,7 @@ public class StartDemoButton : MonoBehaviour
 
     private void StartDemoScene()
     {
-        SceneManager.LoadScene(SceneNumber);
+        PlayerPrefs.SetInt("TargetStudyScene",SceneNumber);
+        SceneManager.LoadScene(1);
     }
 }

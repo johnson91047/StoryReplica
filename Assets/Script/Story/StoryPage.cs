@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StoryPage : MonoBehaviour
@@ -31,6 +32,7 @@ public class StoryPage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StoryContent.color = Color.white;
         _timeBars = new List<Slider>();
         _currentPageTimeCount = 0;
         _uncontrolableTimeCount = 0;
@@ -40,6 +42,25 @@ public class StoryPage : MonoBehaviour
         _totalPageIndex = StoryObject.Controlable ? StoryObject.Stories.Count : 1;
         InitTimeBar();
         InitContent();
+        ToLastState();
+    }
+
+    private void ToLastState()
+    {
+        if (StoryObject.Controlable)
+        {
+            for (int i = 0; i < SceneState.CurrentPageNum; i++)
+            {
+                NextPage();
+            }
+        }
+        else
+        {
+            UnControlableImageIndex = SceneState.CurrentPageNum;
+            Debug.Log(UnControlableImageIndex);
+            _currentPageTimeCount = SceneState.TimeValue;
+            StoryContent.sprite = StoryObject.Stories[UnControlableImageIndex].StoryContent;
+        }
     }
 
     // Update is called once per frame
@@ -47,14 +68,12 @@ public class StoryPage : MonoBehaviour
     {
         if (_pause || _isPersistent)
         {
-            Debug.Log("Paused");
             return;
         }
 
         if (_currentPageTimeCount >= _currentTimeBar.maxValue)
         {
             NextPage();
-            Debug.Log("Next page");
             return;
         }
 
@@ -102,6 +121,15 @@ public class StoryPage : MonoBehaviour
 
         CurrentPageIndex++;
 
+        if (CurrentPageIndex == _totalPageIndex - 1 && !SurveyState.IsFinishedSurveyOne && StoryObject.HasSurveyOne)
+        {
+            SceneState.CurrentPageNum = CurrentPageIndex;
+            SceneState.SavedSceneNum = SceneManager.GetActiveScene().buildIndex;
+            SurveyState.IsFinishedSurveyOne = true;
+            SceneManager.LoadScene(2);
+        }
+
+
         if (CurrentPageIndex >= _totalPageIndex)
         {
             CurrentPageIndex = _totalPageIndex - 1;
@@ -110,7 +138,6 @@ public class StoryPage : MonoBehaviour
             _uncontrolableTimeCount = 0;
             UnControlableImageIndex = 0;
             SetPause(true);
-
             OnChangeToNextStory?.Invoke();
             return;
         }
@@ -131,15 +158,16 @@ public class StoryPage : MonoBehaviour
             return;
         }
 
-        if (StoryObject.Stories[UnControlableImageIndex].IsSurvey)
+        if (UnControlableImageIndex == StoryObject.Stories.Count - 1 && !SurveyState.IsFinishedSurveyOne && StoryObject.HasSurveyOne)
         {
-            SurveySystem.Instance.ShowPage(StoryObject.Stories[UnControlableImageIndex].SurveyType,SurveyPageComplete);
-            SetPause(true);
+            SceneState.CurrentPageNum = UnControlableImageIndex;
+            SceneState.SavedSceneNum = SceneManager.GetActiveScene().buildIndex;
+            SceneState.TimeValue = _currentPageTimeCount;
+            SurveyState.IsFinishedSurveyOne = true;
+            SceneManager.LoadScene(2);
         }
-        else
-        {
-            StoryContent.sprite = StoryObject.Stories[UnControlableImageIndex].StoryContent;
-        }
+
+        StoryContent.sprite = StoryObject.Stories[UnControlableImageIndex].StoryContent;
 
     }
 
@@ -213,12 +241,6 @@ public class StoryPage : MonoBehaviour
 
     private void SetCurrentContent()
     {
-        if (StoryObject.Stories[CurrentPageIndex].IsSurvey)
-        {
-            SurveySystem.Instance.ShowPage(StoryObject.Stories[CurrentPageIndex].SurveyType, SurveyPageComplete);
-            SetPause(true);
-        }
-
         if (StoryObject.Stories[CurrentPageIndex].StoryContent != null)
         {
             StoryContent.sprite = StoryObject.Stories[CurrentPageIndex].StoryContent;

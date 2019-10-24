@@ -6,8 +6,5 @@ using UnityEngine;
 public class SurveyQuestion : ScriptableObject
 {
     public string QuestionTitle;
-    public SurveyQuestionType QuestionType;
-    
-    [Header("If Selective")]
-    public List<string> SelectiveQuestions;
+    public string PropertyName;
 }

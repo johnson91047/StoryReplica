@@ -67,45 +67,16 @@ public class CameraController : MonoBehaviour
             _initMouseXValue = Input.mousePosition.x;
         }
 
-        if (Input.GetMouseButton(0))
-        {
-            StoryMaster.SetCurrentPagePause(true);
-
-            Vector3 dragOffset = _initMouseWorldPosition - _camera.ScreenToWorldPoint(Input.mousePosition);
-
-            dragOffset.y = 0;
-            dragOffset.z = 0;
-
-            Vector3 newPos = transform.position + dragOffset * SpeedMultiplier;
-            newPos.z = CameraInitialZValue;
-
-            TargetPosition = newPos;
-        }
 
         if (Input.GetMouseButtonUp(0))
         {
             StoryMaster.SetCurrentPagePause(false);
 
             Vector3 currentMouseWorldPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            float currentMouseXvalue = Input.mousePosition.x;
-            float offset = currentMouseXvalue - _initMouseXValue;
 
             if (_initMouseWorldPosition.Equals(currentMouseWorldPosition))
             {
                 DoClick(Input.mousePosition);
-            }
-
-            if (offset > 100f)
-            {
-                StoryMaster.ChangeToPreviousStory();
-            }
-            else if(offset < -100f)
-            {
-                StoryMaster.ChangeToNextStory();
-            }
-            else
-            {
-                StoryMaster.StayAtCurrentStory();
             }
         }
     }

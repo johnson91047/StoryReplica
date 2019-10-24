@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d47b26403dbf98429b88f54ec8c4efa, type: 3}
+  m_Name: Certain
+  m_EditorClassIdentifier: 
+  Controlable: 0
+  Persistent: 0
+  HasSurveyOne: 1
+  Stories:
+  - StoryLength: 2
+    StoryContent: {fileID: 21300000, guid: 0d7d6b5d78cbc984f804b6d94a454051, type: 3}
+  - StoryLength: 2
+    StoryContent: {fileID: 21300000, guid: abb2a4b31ad87a34cb11c9a9fe96ed78, type: 3}
+  - StoryLength: 2
+    StoryContent: {fileID: 21300000, guid: ce6ea25f78531ce4fa0985d8b5e19c50, type: 3}
+  - StoryLength: 2
+    StoryContent: {fileID: 21300000, guid: f36194171eaa9a84a87bc19abe3a5b14, type: 3}
+  - StoryLength: 2
+    StoryContent: {fileID: 21300000, guid: 3a29383fcd9b8d44f8dad60b67d326df, type: 3}

@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: WillGetInterestingAnswer
   m_EditorClassIdentifier: 
   QuestionTitle: "\u9019\u6A23\u7684\u5EE3\u544A\u8A2D\u8A08\u8B93\u6211\u89BA\u5F97\u5C07\u6703\u5F97\u5230\u6709\u8DA3\u7684\u7B54\u6848"
-  QuestionType: 0
-  SelectiveQuestions: []
+  PropertyName: FeelGettingInterestingAnswer

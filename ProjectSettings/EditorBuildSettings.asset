@@ -9,18 +9,39 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 52fe71a579c012e4e85101533e1a5278
   - enabled: 1
-    path: Assets/Scenes/Study1_Certain_Controlable.unity
+    path: Assets/Scenes/StarterGuide.unity
+    guid: 28f6b83575cd29a47bf7184190e89a99
+  - enabled: 1
+    path: Assets/Scenes/Survey1.unity
+    guid: e6fd94b76b9cdbe438ce72520bf927cc
+  - enabled: 1
+    path: Assets/Scenes/Survey2.unity
+    guid: ea1ef27555bf71344bb7e9fdc616ed0a
+  - enabled: 1
+    path: Assets/Scenes/PersonalPage.unity
+    guid: dd071b885543b114b985d51a0863a9ee
+  - enabled: 1
+    path: Assets/Scenes/Study1/Study1_Certain_Controlable.unity
     guid: a33eb4824eec8ff44b4328733c626d45
   - enabled: 1
-    path: Assets/Scenes/ConfirmControlable.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Study1/Study1_Uncertain_Controlable.unity
+    guid: ea041fb5aeff1ce4a886e9637db976fa
   - enabled: 1
-    path: Assets/Scenes/Confirm.unity
-    guid: 68a6b95582b0ff041bbe6f3105118715
+    path: Assets/Scenes/Study2/Study2_Certain_Controlable.unity
+    guid: 914bdeba3ae5be24f9924c77429446a1
   - enabled: 1
-    path: Assets/Scenes/NoConfirmControlable.unity
-    guid: 5e52822393c1ef3429a30bf62ea49263
+    path: Assets/Scenes/Study2/Study2_Uncertain_Controlable.unity
+    guid: def4eeed56edd7543b8e9655f6e52936
   - enabled: 1
-    path: Assets/Scenes/NoConfirm.unity
-    guid: caae0a54858b44f4da65b4f6cf3b86b8
+    path: Assets/Scenes/Study3/Study3_Certain_Controlable.unity
+    guid: 55c26311e13608a4198bc8f8006ebab3
+  - enabled: 1
+    path: Assets/Scenes/Study3/Study3_Certain.unity
+    guid: bc4c41e91a30d2443bb44c05f40ca15f
+  - enabled: 1
+    path: Assets/Scenes/Study3/Study3_Uncertain_Controlable.unity
+    guid: 260b52d4f17f6ed4d8cc705996362d7d
+  - enabled: 1
+    path: Assets/Scenes/Study3/Study3_Uncertain.unity
+    guid: 81c31c2a38940ba44ab21b54ba119502
   m_configObjects: {}

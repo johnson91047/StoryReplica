@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Expect
   m_EditorClassIdentifier: 
   QuestionTitle: "\u6211\u5C0D\u65BC\u9019\u5EE3\u544A\u7684\u5167\u5BB9\u6709\u5F88\u5927\u7684\u671F\u5F85"
-  QuestionType: 0
-  SelectiveQuestions: []
+  PropertyName: Expect

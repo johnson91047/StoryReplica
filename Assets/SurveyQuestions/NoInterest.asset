@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: NoInterest
   m_EditorClassIdentifier: 
   QuestionTitle: "\u6211\u5C0D\u5EE3\u544A\u5167\u5BB9\u6C92\u8208\u8DA3"
-  QuestionType: 0
-  SelectiveQuestions: []
+  PropertyName: AdNoInterest

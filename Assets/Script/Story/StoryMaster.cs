@@ -66,8 +66,7 @@ public class StoryMaster : MonoBehaviour
 
         if (CurrentStoryIndex == _totalStoriesCount)
         {
-            CurrentStoryIndex = _totalStoriesCount - 1;
-            StayAtCurrentStory();
+            SceneManager.LoadScene(3);
             return;
         }
 

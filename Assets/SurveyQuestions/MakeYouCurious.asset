@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: MakeYouCurious
   m_EditorClassIdentifier: 
   QuestionTitle: "\u9019\u5EE3\u544A\u53EF\u4EE5\u8B93\u4F60\u7522\u751F\u597D\u5947\u5FC3"
-  QuestionType: 0
-  SelectiveQuestions: []
+  PropertyName: AdCauseCuriosity

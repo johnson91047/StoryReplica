@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: WantToKnowWhatItIs2
   m_EditorClassIdentifier: 
   QuestionTitle: "\u6211\u6709\u8208\u8DA3\u60F3\u4E86\u89E3\u9019\u5728\u5EE3\u544A\u4EC0\u9EBC\u7522\u54C1"
-  QuestionType: 0
-  SelectiveQuestions: []
+  PropertyName: HaveInterestKnowProduct

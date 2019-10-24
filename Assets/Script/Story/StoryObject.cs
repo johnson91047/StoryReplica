@@ -7,9 +7,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewStory",menuName = "Story")]
 public class StoryObject : ScriptableObject
 {
+
     public bool Controlable;
     public bool Persistent;
+    public bool HasSurveyOne;
     public List<StoryData> Stories;
+
 
     public int Id
     {
@@ -30,15 +33,7 @@ public class StoryObject : ScriptableObject
         {
             if (Math.Abs(_totalLength - (-1)) < float.Epsilon)
             {
-                _totalLength = Stories.Sum(story =>
-                {
-                    if (!story.IsSurvey)
-                    {
-                        return story.StoryLength;
-                    }
-
-                    return 0;
-                });
+                _totalLength = Stories.Sum(story => story.StoryLength);
             }
 
             return _totalLength;
