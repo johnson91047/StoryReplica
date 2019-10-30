@@ -442,8 +442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede91b5c10ee8a44da196bb60a426367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StudyName: Study3
   StoryPagePrefab: {fileID: 7333855890481698737, guid: e2cff3679236ea74b9578f69cf3dcec6,
     type: 3}
   CurrentStoryIndex: 0
   Stories:
   - {fileID: 11400000, guid: 341c5ec828cf4de42b29b4ced40b423f, type: 2}
+  CurrentPage: {fileID: 0}

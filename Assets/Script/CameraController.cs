@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -17,12 +18,10 @@ public class CameraController : MonoBehaviour
     private Vector3 _initMouseWorldPosition;
     private float _initMouseXValue;
     private Camera _camera;
-    private bool _isDisable;
 
     // Start is called before the first frame update
     void Start()
     {
-        _isDisable = false;
         _camera = GetComponent<Camera>();
         SetAspectRatio();
     }
@@ -67,16 +66,56 @@ public class CameraController : MonoBehaviour
             _initMouseXValue = Input.mousePosition.x;
         }
 
+        if (Input.GetMouseButton(0))
+        {
+            StoryMaster.SetCurrentPagePause(true);
+
+            Vector3 dragOffset = _initMouseWorldPosition - _camera.ScreenToWorldPoint(Input.mousePosition);
+
+            dragOffset.y = 0;
+            dragOffset.z = 0;
+
+            Vector3 newPos = transform.position + dragOffset * SpeedMultiplier;
+            newPos.z = CameraInitialZValue;
+
+            TargetPosition = newPos;
+        }
 
         if (Input.GetMouseButtonUp(0))
         {
             StoryMaster.SetCurrentPagePause(false);
 
             Vector3 currentMouseWorldPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            float currentMouseXvalue = Input.mousePosition.x;
+            float offset = currentMouseXvalue - _initMouseXValue;
 
             if (_initMouseWorldPosition.Equals(currentMouseWorldPosition))
             {
                 DoClick(Input.mousePosition);
+            }
+
+            if (offset > 100f)
+            {
+                StoryMaster.ChangeToPreviousStory();
+            }
+            else if (offset < -100f)
+            {
+                SurveyState.ShouldSavePageCount = false;
+                SurveyState.CurrentSurvey.StopTimer();
+                if (StoryMaster.Stories[0].HasSurveyOne)
+                {
+                    StoryMaster.CurrentPage.GoToSurveyOne();
+                }
+                else
+                {
+                    StoryMaster.ChangeToNextStory();
+                }
+
+                
+            }
+            else
+            {
+                StoryMaster.StayAtCurrentStory();
             }
         }
     }
@@ -113,7 +152,7 @@ public class CameraController : MonoBehaviour
         float targetAspect = AspectRatio.x / AspectRatio.y;
 
         // determine the game window's current aspect ratio
-        float windowAspect = (float)Screen.width / (float)Screen.height;
+        float windowAspect =(float)Screen.width / (float)Screen.height;
 
         // current viewport height should be scaled by this amount
         float scaleHeight = windowAspect / targetAspect;

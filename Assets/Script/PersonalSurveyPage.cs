@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PersonalSurveyPage : MonoBehaviour
@@ -9,6 +9,13 @@ public class PersonalSurveyPage : MonoBehaviour
     public GameObject FirstPage;
     public GameObject SeconPage;
     public GameObject ThirdPage;
+
+    public ToggleGroup SexToggleGroup;
+    public ToggleGroup AgeToggleGroup;
+    public ToggleGroup EducationToggleGroup;
+    public ToggleGroup ClassToggleGroup;
+
+
     public Button NextButton;
 
     public List<GameObject> Questions;
@@ -30,7 +37,7 @@ public class PersonalSurveyPage : MonoBehaviour
         
     }
 
-    private void ButtonClick()
+    private async void ButtonClick()
     {
         switch (_count)
         {
@@ -42,7 +49,7 @@ public class PersonalSurveyPage : MonoBehaviour
             case 1:
                 if (CheckAnswer())
                 {
-                    UploadData();
+                    await UploadData();
                     SeconPage.SetActive(false);
                     ThirdPage.SetActive(true);
                     NextButton.gameObject.SetActive(false);
@@ -66,8 +73,20 @@ public class PersonalSurveyPage : MonoBehaviour
         return true;
     }
 
-    private void UploadData()
+    private async Task UploadData()
     {
-        //TODO Upload data
+        PersonalSurvey personal = new PersonalSurvey
+        {
+            Sex = SexToggleGroup.GetActivatedToggleTranform().GetComponent<ToggleComponent>().PropertyName,
+            Age = AgeToggleGroup.GetActivatedToggleTranform().GetComponent<ToggleComponent>().PropertyName,
+            Education = EducationToggleGroup.GetActivatedToggleTranform().GetComponent<ToggleComponent>().PropertyName,
+            Class = ClassToggleGroup.GetActivatedToggleTranform().GetComponent<ToggleComponent>().PropertyName
+        };
+
+        SurveyState.CurrentSurvey.SetTime();
+        SurveyState.CurrentSurvey.PersonalData = personal;
+
+        await FireBaseManager.FireBaseClient.Child("Survey")
+            .PostAsync(JsonConvert.SerializeObject(SurveyState.CurrentSurvey));
     }
 }

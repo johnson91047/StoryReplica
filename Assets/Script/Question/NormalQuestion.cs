@@ -23,4 +23,13 @@ public class NormalQuestion : QuestionElement
     {
         return ToggleGroup.AnyTogglesOn();
     }
+
+    public override SurveyData GetData()
+    {
+        return new SurveyData
+        {
+            QuestionName = Title.text,
+            Value = ToggleGroup.GetActivatedToggleIndex()
+        };
+    }
 }

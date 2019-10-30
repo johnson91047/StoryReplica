@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,13 +29,14 @@ public class SurveyPage : MonoBehaviour
     {
         if (CheckComplete())
         {
-            UploadData();
+            SetSurveyData();
             if (IsSurveyTwo)
             {
                 ToPersonalSurvey();
             }
             else
             {
+                SurveyState.CurrentSurvey.StartTimer();
                 BackToStudy();
             }
 
@@ -55,9 +58,28 @@ public class SurveyPage : MonoBehaviour
         SceneManager.LoadScene(SceneState.SavedSceneNum);
     }
 
-    private void UploadData()
+    private void SetSurveyData()
     {
-        //TODO upload data to firebase
+        Survey survey = new Survey();
+        List<SurveyData> data = new List<SurveyData>();
+
+        Debug.Log(QuestionParent.childCount);
+
+        for (int i = 0; i < QuestionParent.childCount; i++)
+        {
+            QuestionElement element = QuestionParent.GetChild(i).GetComponent<QuestionElement>();
+            data.Add(element.GetData());
+        }
+
+        if (IsSurveyTwo)
+        {
+            SurveyState.CurrentSurvey.Survey2 = data;
+        }
+        else
+        {
+            SurveyState.CurrentSurvey.Survey1 = data;
+        }
+        
     }
 
     private bool CheckComplete()

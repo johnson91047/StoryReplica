@@ -11,6 +11,9 @@ public class MainMenu : MonoBehaviour
         SceneState.SavedSceneNum = 0;
         SceneState.TimeValue = 0;
         SurveyState.IsFinishedSurveyOne = false;
+        SurveyState.ShouldSavePageCount = true;
+        SurveyState.ShouldSaveTimeCount = true;
+        SurveyState.CurrentSurvey = new Survey();
     }
 
     // Update is called once per frame

@@ -40,6 +40,8 @@ public class StoryPage : MonoBehaviour
         _pause = true;
         _isPersistent = false;
         _totalPageIndex = StoryObject.Controlable ? StoryObject.Stories.Count : 1;
+        SurveyState.CurrentSurvey.StartTimer();
+
         InitTimeBar();
         InitContent();
         ToLastState();
@@ -87,7 +89,6 @@ public class StoryPage : MonoBehaviour
                 if (_uncontrolableTimeCount >= StoryObject.TotalLength / StoryObject.Stories.Count)
                 {
                     NextImage();
-                    Debug.Log("Next Image");
                     _uncontrolableTimeCount = 0;
                 }
             }
@@ -121,12 +122,15 @@ public class StoryPage : MonoBehaviour
 
         CurrentPageIndex++;
 
-        if (CurrentPageIndex == _totalPageIndex - 1 && !SurveyState.IsFinishedSurveyOne && StoryObject.HasSurveyOne)
+        if (SurveyState.ShouldSavePageCount)
         {
-            SceneState.CurrentPageNum = CurrentPageIndex;
-            SceneState.SavedSceneNum = SceneManager.GetActiveScene().buildIndex;
-            SurveyState.IsFinishedSurveyOne = true;
-            SceneManager.LoadScene(2);
+            SurveyState.CurrentSurvey.ViewedPageCount =
+                Math.Max(CurrentPageIndex, SurveyState.CurrentSurvey.ViewedPageCount);
+        }
+
+        if (CurrentPageIndex == StoryObject.Stories.Count - 1)
+        {
+            GoToSurveyOne();
         }
 
 
@@ -138,6 +142,7 @@ public class StoryPage : MonoBehaviour
             _uncontrolableTimeCount = 0;
             UnControlableImageIndex = 0;
             SetPause(true);
+            SurveyState.CurrentSurvey.StopTimer();
             OnChangeToNextStory?.Invoke();
             return;
         }
@@ -153,19 +158,22 @@ public class StoryPage : MonoBehaviour
     {
         UnControlableImageIndex++;
 
+        if (SurveyState.ShouldSavePageCount)
+        {
+            SurveyState.CurrentSurvey.ViewedPageCount =
+                Math.Max(UnControlableImageIndex, SurveyState.CurrentSurvey.ViewedPageCount);
+        }
+
         if (UnControlableImageIndex >= StoryObject.Stories.Count)
         {
             return;
         }
 
-        if (UnControlableImageIndex == StoryObject.Stories.Count - 1 && !SurveyState.IsFinishedSurveyOne && StoryObject.HasSurveyOne)
+        if (UnControlableImageIndex == StoryObject.Stories.Count - 1)
         {
-            SceneState.CurrentPageNum = UnControlableImageIndex;
-            SceneState.SavedSceneNum = SceneManager.GetActiveScene().buildIndex;
-            SceneState.TimeValue = _currentPageTimeCount;
-            SurveyState.IsFinishedSurveyOne = true;
-            SceneManager.LoadScene(2);
+            GoToSurveyOne();
         }
+
 
         StoryContent.sprite = StoryObject.Stories[UnControlableImageIndex].StoryContent;
 
@@ -226,18 +234,6 @@ public class StoryPage : MonoBehaviour
     }
 
 
-    private void SurveyPageComplete()
-    {
-        if (StoryObject.Controlable)
-        {
-            NextPage();
-        }
-        else
-        {
-            NextImage();
-        }
-        SetPause(false);
-    }
 
     private void SetCurrentContent()
     {
@@ -291,5 +287,18 @@ public class StoryPage : MonoBehaviour
 
 
         _currentTimeBar = _timeBars[0];
+    }
+
+    public void GoToSurveyOne()
+    {
+        if (!SurveyState.IsFinishedSurveyOne && StoryObject.HasSurveyOne)
+        {
+            SurveyState.CurrentSurvey.StopTimer();
+            SceneState.CurrentPageNum = StoryObject.Stories.Count - 1;
+            SceneState.SavedSceneNum = SceneManager.GetActiveScene().buildIndex;
+            SceneState.TimeValue = StoryObject.TotalLength * ((StoryObject.Stories.Count - 1)/ (float)StoryObject.Stories.Count) ;
+            SurveyState.IsFinishedSurveyOne = true;
+            SceneManager.LoadScene(2);
+        }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StoryMaster : MonoBehaviour
 {
+    public string StudyName;
     public GameObject StoryPagePrefab;
     public int CurrentStoryIndex = 0;
 
@@ -14,7 +15,7 @@ public class StoryMaster : MonoBehaviour
     private Camera _mainCamera;
     private CameraController _cameraController;
     private List<StoryPage> _pages;
-    private StoryPage _currentPage;
+    public StoryPage CurrentPage;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class StoryMaster : MonoBehaviour
 
         InitStories();
         _totalStoriesCount = transform.childCount;
+        SurveyState.CurrentSurvey.StudyName = StudyName;
 
         StartCoroutine(SetCameraToCurrentPagePosInit());
     }
@@ -34,7 +36,7 @@ public class StoryMaster : MonoBehaviour
         yield return new WaitForEndOfFrame();
         Vector3 pos = transform.GetChild(CurrentStoryIndex).transform.position;
         _cameraController.SetDestination(pos);
-        _currentPage = _pages[CurrentStoryIndex];
+        CurrentPage = _pages[CurrentStoryIndex];
         SetCurrentPagePause(false);
     }
 
@@ -42,7 +44,7 @@ public class StoryMaster : MonoBehaviour
     {
         Vector3 pos = transform.GetChild(CurrentStoryIndex).transform.position;
         _cameraController.SetDestination(pos);
-        _currentPage = _pages[CurrentStoryIndex];
+        CurrentPage = _pages[CurrentStoryIndex];
         SetCurrentPagePause(false);
     }
 
@@ -70,7 +72,7 @@ public class StoryMaster : MonoBehaviour
             return;
         }
 
-        _currentPage.StayCurrentState();
+        CurrentPage.StayCurrentState();
         SetCameraToCurrentPagePos();
         Debug.Log("Next Story");
     }
@@ -86,7 +88,7 @@ public class StoryMaster : MonoBehaviour
             return;
         }
 
-        _currentPage.StayCurrentState();
+        CurrentPage.StayCurrentState();
 
         SetCameraToCurrentPagePos();
     }
@@ -98,17 +100,17 @@ public class StoryMaster : MonoBehaviour
 
     public void SetCurrentPagePause(bool pause)
     {
-        _currentPage.SetPause(pause);
+        CurrentPage.SetPause(pause);
     }
 
     public void ChangeToNextPage()
     {
-        _currentPage.NextPage();
+        CurrentPage.NextPage();
     }
 
     public void ChangeToPreviousPage()
     {
-        _currentPage.PreviousPage();
+        CurrentPage.PreviousPage();
     }
 
     public void BackToMenu()

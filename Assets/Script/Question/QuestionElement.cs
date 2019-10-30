@@ -7,4 +7,6 @@ public abstract class QuestionElement : MonoBehaviour
 
     public abstract int GetValue();
     public abstract bool IsComplete();
+
+    public abstract SurveyData GetData();
 }
