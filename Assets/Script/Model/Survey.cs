@@ -17,6 +17,8 @@ public class Survey
 
     public PersonalSurvey PersonalData;
 
+    public List<SurveyData> ControlSurvey { get; set; } = new List<SurveyData>();
+
     private Stopwatch _stopwatch;
 
     public void StartTimer()

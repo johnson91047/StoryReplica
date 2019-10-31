@@ -55,10 +55,6 @@ public class CameraController : MonoBehaviour
     }
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
 
         if (Input.GetMouseButtonDown(0))
         {

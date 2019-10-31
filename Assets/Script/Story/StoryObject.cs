@@ -11,6 +11,7 @@ public class StoryObject : ScriptableObject
     public bool Controlable;
     public bool Persistent;
     public bool HasSurveyOne;
+    public bool HasSurveyTwo;
     public List<StoryData> Stories;
 
 

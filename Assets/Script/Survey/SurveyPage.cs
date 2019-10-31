@@ -60,15 +60,12 @@ public class SurveyPage : MonoBehaviour
 
     private void SetSurveyData()
     {
-        Survey survey = new Survey();
         List<SurveyData> data = new List<SurveyData>();
 
-        Debug.Log(QuestionParent.childCount);
 
-        for (int i = 0; i < QuestionParent.childCount; i++)
+        foreach (QuestionElement questionElement in _questionElements)
         {
-            QuestionElement element = QuestionParent.GetChild(i).GetComponent<QuestionElement>();
-            data.Add(element.GetData());
+            data.Add(questionElement.GetData());
         }
 
         if (IsSurveyTwo)

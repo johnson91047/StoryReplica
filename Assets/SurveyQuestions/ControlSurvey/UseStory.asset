@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afe2bc09fcfc6a419bf49af8871b6e5, type: 3}
+  m_Name: UseStory
+  m_EditorClassIdentifier: 
+  QuestionTitle: "\u8ACB\u554F\u60A8\u66FE\u7D93\u4F7F\u7528\u904EInstagram\u6216facebook\u7684\u9650\u6642\u52D5\u614B\u529F\u80FD\u55CE?
+    (\u975E\u5E38\u540C\u610F\u6216\u975E\u5E38\u4E0D\u540C\u610F) "
+  PropertyName: IfUserUseStroy

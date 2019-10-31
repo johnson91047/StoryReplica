@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controlable: 0
   Persistent: 0
-  HasSurveyOne: 1
+  HasSurveyOne: 0
+  HasSurveyTwo: 0
   Stories:
   - StoryLength: 2
     StoryContent: {fileID: 21300000, guid: 04d227909bc268f468c809b7b12c7b0f, type: 3}

@@ -15,14 +15,15 @@ MonoBehaviour:
   Controlable: 0
   Persistent: 0
   HasSurveyOne: 0
+  HasSurveyTwo: 0
   Stories:
-  - StoryLength: 2
+  - StoryLength: 5
     StoryContent: {fileID: 21300000, guid: a034bbe785dcc1c4083b3f51fbcf0632, type: 3}
-  - StoryLength: 2
+  - StoryLength: 5
     StoryContent: {fileID: 21300000, guid: 5423430a577466b4c8f59bccb0f49586, type: 3}
-  - StoryLength: 2
+  - StoryLength: 5
     StoryContent: {fileID: 21300000, guid: cb54945e44c17ac479b5f29e881adb9a, type: 3}
-  - StoryLength: 2
+  - StoryLength: 5
     StoryContent: {fileID: 21300000, guid: 1c530f6daa4d946408708a8cabb2db2b, type: 3}
-  - StoryLength: 2
+  - StoryLength: 5
     StoryContent: {fileID: 21300000, guid: 883d9444e62eb4a4c84c2da8190e7daa, type: 3}

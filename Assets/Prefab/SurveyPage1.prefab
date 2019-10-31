@@ -767,6 +767,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99e34d3bf23c39a4aa36eb26b4af1de7, type: 2}
   - {fileID: 11400000, guid: 538b188f3b312e14cabf8fee83c8a1aa, type: 2}
   CompleteButton: {fileID: 6237034768133082682}
+  IsSurveyTwo: 0
 --- !u!1 &6237034769475259997
 GameObject:
   m_ObjectHideFlags: 0

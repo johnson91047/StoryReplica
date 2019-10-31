@@ -447,5 +447,5 @@ MonoBehaviour:
     type: 3}
   CurrentStoryIndex: 0
   Stories:
-  - {fileID: 11400000, guid: 9da1ad9576a707848b24f4c7c3994ff0, type: 2}
+  - {fileID: 11400000, guid: a57cbbacb73c40749a86856e9a535c8f, type: 2}
   CurrentPage: {fileID: 0}

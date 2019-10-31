@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StoryMaster : MonoBehaviour
 {
-    public string StudyName;
     public GameObject StoryPagePrefab;
     public int CurrentStoryIndex = 0;
 
@@ -26,7 +26,6 @@ public class StoryMaster : MonoBehaviour
 
         InitStories();
         _totalStoriesCount = transform.childCount;
-        SurveyState.CurrentSurvey.StudyName = StudyName;
 
         StartCoroutine(SetCameraToCurrentPagePosInit());
     }
@@ -42,6 +41,7 @@ public class StoryMaster : MonoBehaviour
 
     private void SetCameraToCurrentPagePos()
     {
+        CurrentStoryIndex = Mathf.Clamp(CurrentStoryIndex, 0, transform.childCount);
         Vector3 pos = transform.GetChild(CurrentStoryIndex).transform.position;
         _cameraController.SetDestination(pos);
         CurrentPage = _pages[CurrentStoryIndex];
@@ -68,7 +68,8 @@ public class StoryMaster : MonoBehaviour
 
         if (CurrentStoryIndex == _totalStoriesCount)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(Stories[0].HasSurveyTwo ? 3 : 4);
+
             return;
         }
 

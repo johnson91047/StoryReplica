@@ -30,8 +30,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Study2/Study2_Certain_Controlable.unity
     guid: 914bdeba3ae5be24f9924c77429446a1
   - enabled: 1
+    path: Assets/Scenes/Study2/Study2_Certain.unity
+    guid: 1129ace7381ad574fa83afde797dfb43
+  - enabled: 1
     path: Assets/Scenes/Study2/Study2_Uncertain_Controlable.unity
     guid: def4eeed56edd7543b8e9655f6e52936
+  - enabled: 1
+    path: Assets/Scenes/Study2/Study2_Uncertain.unity
+    guid: 11104cdf988129b478893e264f2d9fea
   - enabled: 1
     path: Assets/Scenes/Study3/Study3_Certain_Controlable.unity
     guid: 55c26311e13608a4198bc8f8006ebab3

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class StartDemoButton : MonoBehaviour
 {
+    public string StudyName;
     public int SceneNumber;
 
     private Button _button;
@@ -19,6 +20,7 @@ public class StartDemoButton : MonoBehaviour
 
     private void StartDemoScene()
     {
+        SurveyState.CurrentSurvey.StudyName = StudyName;
         PlayerPrefs.SetInt("TargetStudyScene",SceneNumber);
         SceneManager.LoadScene(1);
     }
