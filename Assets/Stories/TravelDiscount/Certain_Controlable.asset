@@ -15,17 +15,25 @@ MonoBehaviour:
   Controlable: 1
   Persistent: 0
   HasSurveyOne: 0
-  HasSurveyTwo: 0
+  HasSurveyTwo: 1
   Stories:
-  - StoryLength: 2
-    StoryContent: {fileID: 21300000, guid: 04d227909bc268f468c809b7b12c7b0f, type: 3}
-  - StoryLength: 2
-    StoryContent: {fileID: 21300000, guid: 2abcd1420f266d84fb7f3aec0e6972a3, type: 3}
-  - StoryLength: 2
-    StoryContent: {fileID: 21300000, guid: b99efc26b27d63c40a8b8f0d753ea6c1, type: 3}
-  - StoryLength: 2
-    StoryContent: {fileID: 21300000, guid: 1983601f843c1f1468824098cb7edf07, type: 3}
-  - StoryLength: 2
-    StoryContent: {fileID: 21300000, guid: 5a7da3abb56cd4b4681285160ede27f8, type: 3}
-  - StoryLength: 2
-    StoryContent: {fileID: 21300000, guid: 167130e7db6e5d94890087c2018fc859, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: 3a96c35360eb747419f7c5403f6fc7e8, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: 0040ad9a1777e3f45a0d6b0e2e101862, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: 95376eedd5bc15d469e194f0ef8b86d6, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: e10a38973d7f57e4a8e67315fec41300, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: b071f3c214fdf344d94ed0b0c6b18888, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: 17667a4f60757a54080395355ebf2f68, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: e1546b5ea2b21144dbd3420cf7bf69d5, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: abeacb645129afe4fbdd197d65555d11, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: 586e7efd183f39b4088eb222344404c3, type: 3}
+  - StoryLength: 5
+    StoryContent: {fileID: 21300000, guid: 357128e9cccb68646b525f973d840dbd, type: 3}

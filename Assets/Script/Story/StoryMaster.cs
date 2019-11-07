@@ -41,7 +41,7 @@ public class StoryMaster : MonoBehaviour
 
     private void SetCameraToCurrentPagePos()
     {
-        CurrentStoryIndex = Mathf.Clamp(CurrentStoryIndex, 0, transform.childCount);
+        CurrentStoryIndex = Mathf.Clamp(CurrentStoryIndex, 0, transform.childCount - 1);
         Vector3 pos = transform.GetChild(CurrentStoryIndex).transform.position;
         _cameraController.SetDestination(pos);
         CurrentPage = _pages[CurrentStoryIndex];

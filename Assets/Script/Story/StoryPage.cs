@@ -143,6 +143,9 @@ public class StoryPage : MonoBehaviour
             UnControlableImageIndex = 0;
             SetPause(true);
             SurveyState.CurrentSurvey.StopTimer();
+
+            GoToSurveyOne();
+
             OnChangeToNextStory?.Invoke();
             return;
         }

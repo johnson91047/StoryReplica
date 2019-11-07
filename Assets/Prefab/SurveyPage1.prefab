@@ -763,9 +763,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 94cebc46d86dfb4438ce60fc605be353, type: 2}
   - {fileID: 11400000, guid: 92d6ea04892050e4fbca0b3ad4f33cd1, type: 2}
   - {fileID: 11400000, guid: 10076d44022f47b439f6ffc83e0e53cd, type: 2}
-  - {fileID: 11400000, guid: cf65b95cdba62e04a91eaccb8e4181d5, type: 2}
-  - {fileID: 11400000, guid: 99e34d3bf23c39a4aa36eb26b4af1de7, type: 2}
-  - {fileID: 11400000, guid: 538b188f3b312e14cabf8fee83c8a1aa, type: 2}
   CompleteButton: {fileID: 6237034768133082682}
   IsSurveyTwo: 0
 --- !u!1 &6237034769475259997
@@ -1195,7 +1192,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u8ACB\u4F9D\u7167\u525B\u525B\u6240\u89C0\u770B\u7684\u5EE3\u544A\u6240\u5E36\u7D66\u4F60\u7684\u611F\u53D7\u9078\u51FA\u60A8\u8A8D\u70BA\u6700\u9069\u5408\u7684\u9078\u9805\r\n"
+  m_text: "\u554F\u53771\n\u8ACB\u4F9D\u7167\u525B\u525B\u6240\u89C0\u770B\u7684\u5EE3\u544A\u6240\u5E36\u7D66\u4F60\u7684\u611F\u53D7\u9078\u51FA\u60A8\u8A8D\u70BA\u6700\u9069\u5408\u7684\u9078\u9805\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95c309be9bcb9e4f8c3aa98527b1159, type: 2}
   m_sharedMaterial: {fileID: -9009834881816724081, guid: a95c309be9bcb9e4f8c3aa98527b1159,
@@ -1265,12 +1262,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6237034769998508894}
-    characterCount: 31
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 2
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

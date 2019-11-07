@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controlable: 1
   Persistent: 0
-  HasSurveyOne: 1
+  HasSurveyOne: 0
   HasSurveyTwo: 1
   Stories:
   - StoryLength: 5
-    StoryContent: {fileID: 21300000, guid: 7fc0adf2c0706b5418d00c27aad781db, type: 3}
+    StoryContent: {fileID: 21300000, guid: 23bee09ee136bf34dacd62dc8718cfdd, type: 3}
   - StoryLength: 5
     StoryContent: {fileID: 21300000, guid: abb2a4b31ad87a34cb11c9a9fe96ed78, type: 3}
   - StoryLength: 5
-    StoryContent: {fileID: 21300000, guid: ce6ea25f78531ce4fa0985d8b5e19c50, type: 3}
+    StoryContent: {fileID: 21300000, guid: 4c18ea99ba3a09f4697a4508518bf8eb, type: 3}
   - StoryLength: 5
-    StoryContent: {fileID: 21300000, guid: f36194171eaa9a84a87bc19abe3a5b14, type: 3}
+    StoryContent: {fileID: 21300000, guid: c75592a4877ce5345958539bded8eebf, type: 3}
   - StoryLength: 5
     StoryContent: {fileID: 21300000, guid: 3a29383fcd9b8d44f8dad60b67d326df, type: 3}
